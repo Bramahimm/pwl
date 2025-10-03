@@ -5,15 +5,23 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Kelas extends Model {
+class Kelas extends Model
+{
     use HasFactory;
-    protected $guarded = ['id'];
 
-    public function user() {
+    // Laravel otomatis pakai tabel 'kelas' karena nama model 'Kelas'
+    protected $table = 'kelas';
+
+    // Kolom yang boleh diisi mass-assignment
+    protected $fillable = ['nama_kelas'];
+
+    public function user()
+    {
         return $this->hasMany(UserModel::class, 'kelas_id');
     }
-    
-    public function getKelas() {
+
+    public function getKelas()
+    {
         return $this->all();
     }
 }

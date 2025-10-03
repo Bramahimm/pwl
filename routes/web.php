@@ -8,8 +8,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+// contoh route profile (modul 1)
 Route::get('/profile/{nama?}/{kelas?}/{npm?}', [ProfileController::class, 'profile']);
 
-Route::get('/users', [UserController::class, 'index'])->name('user.index');
-Route::get('/users/create', [UserController::class, 'create'])->name('user.create');
-Route::post('/users', [UserController::class, 'store'])->name('user.store');
+// ==== ROUTE UNTUK USER ====
+Route::get('/users', [UserController::class, 'index'])->name('user.index');   // GET daftar user
+Route::get('/users/create', [UserController::class, 'create'])->name('user.create'); // GET form tambah user
+Route::post('/users', [UserController::class, 'store'])->name('user.store'); // POST simpan user baru

@@ -27,20 +27,21 @@ class UserController extends Controller {
         return view('create_user', $data);
     }
 
-    public function store(Request $req) {
-        $this->userModel->create([
-            'nama' => $req->input('nama'),
-            'nim' => $req->input('npm'),
-            'kelas_id' => $req->input('kelas_id'),
-        ]);
-        return redirect()->to('/users');
-    }
-
     public function index() {
         $data = [
             'title' => 'List User',
             'users' => $this->userModel->getUser()
         ];
         return view('list_user', $data);
+    }
+
+    public function store(Request $req) {
+        $this->userModel->create([
+            'nama' => $req->input('nama'),
+            'nim' => $req->input('npm'),
+            'kelas_id' => $req->input('kelas_id'),
+        ]);
+
+        return redirect()->to('/users');
     }
 }
