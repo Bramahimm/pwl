@@ -12,7 +12,6 @@
   <main class="container mx-auto p-4">
     @yield('content')
   </main>
-
   @include('components.footer')
 </body>
 </html>
