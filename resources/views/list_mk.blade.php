@@ -10,7 +10,7 @@
         <thead>
             <tr>
                 <th>ID</th>
-                <th>Nama Mata Kuliah</th>
+                <th>Nama Mata Kuliahh</th>
                 <th>SKS</th>
             </tr>
         </thead>
